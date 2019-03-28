@@ -1,0 +1,12 @@
+﻿table {
+    border: 2px solid #EEEEEE;
+}
+
+th, td {
+    border: 2px solid #EEEEEE;
+}
+
+.MenuTrang li {
+    display: inline;
+    word-spacing: 5px;
+}

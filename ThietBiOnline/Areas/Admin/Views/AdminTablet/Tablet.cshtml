@@ -1,0 +1,225 @@
+﻿@model IEnumerable<ThietBiOnline.Models.EF.Tablet>
+
+@{
+    ViewBag.Title = "Tablet";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Tablet</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Tablet
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GiaSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SoLuong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HinhAnhSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTaSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ManHinh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CameraTruoc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CameraSau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CPU)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GPU)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RAM)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BoNhoTrong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Connection)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Pin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HDH)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenSanPham)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GiaSanPham)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SoLuong)
+                            </td>
+                            <td>
+                                <img src="~/Images/@item.HinhAnhSanPham" width="100" height="100"/>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTaSanPham)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ManHinh)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CameraTruoc)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CameraSau)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CPU)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GPU)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RAM)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BoNhoTrong)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Connection)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Pin)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HDH)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                <a href="#" onclick="confirmDelete(@item.ID)">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GiaSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.SoLuong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HinhAnhSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTaSanPham)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ManHinh)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CameraTruoc)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CameraSau)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CPU)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.GPU)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RAM)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BoNhoTrong)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Connection)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Pin)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.HDH)
+                        </th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="hiddenProductID" />
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="#" class="close" data-dismiss="modal">&times;</a>
+                <h3 class="modal-title">Delete Product</h3>
+            </div>
+            <div class="modal-body">
+                <h4>Are you sure ? You want to delete this. </h4>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-default" data-dismiss="modal">Cancel</a>
+                <a href="#" class="btn btn-success" onclick="deleteProduct()">Confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let confirmDelete = ID => {
+        debugger;
+        $("#hiddenProductID").val(ID);
+        $("#myModal").modal('show');
+    };
+
+    let deleteProduct = () => {
+        let productID = $("#hiddenProductID").val();
+        $.ajax({
+            type: 'POST',
+            url: '/AdminTablet/Delete',
+            data: { "ID" : productID },
+            success: function () {
+                $("#myModal").modal("hide");
+                $("#row_" + productID).remove();
+            }
+        });
+    };
+</script>

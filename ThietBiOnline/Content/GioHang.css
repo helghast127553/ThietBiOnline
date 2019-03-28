@@ -1,0 +1,83 @@
+﻿#formOrder {
+    text-align: center;
+}
+
+table {
+    border: 2px solid #EEEEEE;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    border: 2px solid #EEEEEE;
+    padding: 10px;
+    font-family: Arial;
+    text-align: center;
+}
+
+th {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 19px;
+}
+div#tongTien{
+    font-size: 19px;
+    font-weight: bold;
+    padding-left: 980px;
+}
+
+.value-button {
+    display: inline-block;
+    border: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 11px 0;
+    background: #eee;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.value-button:hover {
+    cursor: pointer;
+}
+
+form #decrease {
+    margin-right: -4px;
+    border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+    margin-left: -4px;
+    border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+    margin: 0px;
+    padding: 0px;
+}
+
+input.number {
+    text-align: center;
+    border: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 0px;
+    width: 40px;
+    height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

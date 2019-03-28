@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThietBiOnlineModelStoreContainer" CdmEntityContainer="ThietBiOnlineEntities">
+    <EntitySetMapping Name="ChiTietDonHangLaptops">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.ChiTietDonHangLaptop">
+        <MappingFragment StoreEntitySet="ChiTietDonHangLaptop">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDonHangPhones">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.ChiTietDonHangPhone">
+        <MappingFragment StoreEntitySet="ChiTietDonHangPhone">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDonHangTablets">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.ChiTietDonHangTablet">
+        <MappingFragment StoreEntitySet="ChiTietDonHangTablet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MaDonHang" ColumnName="MaDonHang" />
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHang">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+          <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="NgayMua" ColumnName="NgayMua" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laptops">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.Laptop">
+        <MappingFragment StoreEntitySet="Laptop">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="GiaSanPham" ColumnName="GiaSanPham" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="HinhAnhSanPham" ColumnName="HinhAnhSanPham" />
+          <ScalarProperty Name="MoTaSanPham" ColumnName="MoTaSanPham" />
+          <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
+          <ScalarProperty Name="ManHinh" ColumnName="ManHinh" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="HardDrive" ColumnName="HardDrive" />
+          <ScalarProperty Name="VGA" ColumnName="VGA" />
+          <ScalarProperty Name="Connection" ColumnName="Connection" />
+          <ScalarProperty Name="HDH" ColumnName="HDH" />
+          <ScalarProperty Name="Nang" ColumnName="Nang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPhams">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPham">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenLoaiSanPham" ColumnName="TenLoaiSanPham" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phones">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.Phone">
+        <MappingFragment StoreEntitySet="Phone">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="GiaSanPham" ColumnName="GiaSanPham" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="HinhAnhSanPham" ColumnName="HinhAnhSanPham" />
+          <ScalarProperty Name="MoTaSanPham" ColumnName="MoTaSanPham" />
+          <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
+          <ScalarProperty Name="ManHinh" ColumnName="ManHinh" />
+          <ScalarProperty Name="CameraTruoc" ColumnName="CameraTruoc" />
+          <ScalarProperty Name="CameraSau" ColumnName="CameraSau" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="BoNhoTrong" ColumnName="BoNhoTrong" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="HDH" ColumnName="HDH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablets">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.Tablet">
+        <MappingFragment StoreEntitySet="Tablet">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenSanPham" ColumnName="TenSanPham" />
+          <ScalarProperty Name="GiaSanPham" ColumnName="GiaSanPham" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="HinhAnhSanPham" ColumnName="HinhAnhSanPham" />
+          <ScalarProperty Name="MoTaSanPham" ColumnName="MoTaSanPham" />
+          <ScalarProperty Name="IDLoaiSanPham" ColumnName="IDLoaiSanPham" />
+          <ScalarProperty Name="ManHinh" ColumnName="ManHinh" />
+          <ScalarProperty Name="CameraTruoc" ColumnName="CameraTruoc" />
+          <ScalarProperty Name="CameraSau" ColumnName="CameraSau" />
+          <ScalarProperty Name="CPU" ColumnName="CPU" />
+          <ScalarProperty Name="GPU" ColumnName="GPU" />
+          <ScalarProperty Name="RAM" ColumnName="RAM" />
+          <ScalarProperty Name="BoNhoTrong" ColumnName="BoNhoTrong" />
+          <ScalarProperty Name="Connection" ColumnName="Connection" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="HDH" ColumnName="HDH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ThietBiOnlineModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

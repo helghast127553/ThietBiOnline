@@ -1,0 +1,104 @@
+﻿/*Div sản phẩm*/
+
+div#SanPham {
+    float: left;
+    width: 250px;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+div#AnhBia p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+    /*Div hình ảnh của sp*/
+div#SanPham img {
+    width: 200px;
+    height: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#ThongTin {
+    border: 1px solid rgba(0,0,0,.4);
+    padding: 0 15px 15px 15px;
+    font-family: 'Segoe UI';
+    font-size: 16pt;
+    font-weight: 400;
+}
+
+div#divInfo {
+    padding-top: 10px;
+    border-top: 2px solid #ebebeb;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div#divInfo li {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size: 15px;
+    color: #7e7e7e;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+div#divInfo strong {
+    vertical-align: top;
+    width: 80px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #7e7e7e;
+}
+
+/*Div tên sách*/
+#TenSach {
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+    /*height: 80px;*/
+}
+
+#DonGia {
+    text-align: center;
+    padding: 5px;
+    font-size: 15pt;
+    border-top: 1px solid rgba(0,0,0,.3);
+}
+/**/
+#divBody {
+    margin: auto;
+}
+
+h1 {
+  overflow: hidden;
+  text-align: center;
+}
+
+h1:before,
+h1:after {
+  border: 1px solid rgba(0,0,0,.4);
+  background-color: #000;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+h1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+h1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+

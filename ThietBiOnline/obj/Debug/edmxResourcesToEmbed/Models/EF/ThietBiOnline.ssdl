@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ThietBiOnlineModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChiTietDonHangLaptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDonHang" Type="int" />
+    <Property Name="MaSanPham" Type="int" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="100" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="ChiTietDonHangPhone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDonHang" Type="int" />
+    <Property Name="MaSanPham" Type="int" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="100" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="ChiTietDonHangTablet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDonHang" Type="int" />
+    <Property Name="MaSanPham" Type="int" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="100" />
+    <Property Name="DonGia" Type="int" />
+    <Property Name="ThanhTien" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="DonHang">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhachHang" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenNhanVien" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="char" MaxLength="11" />
+    <Property Name="NgayMua" Type="datetime" StoreGeneratedPattern="Computed" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Laptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="100" />
+    <Property Name="GiaSanPham" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="HinhAnhSanPham" Type="varchar" MaxLength="1000" />
+    <Property Name="MoTaSanPham" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IDLoaiSanPham" Type="varchar" MaxLength="50" StoreGeneratedPattern="Computed" />
+    <Property Name="ManHinh" Type="varchar" MaxLength="50" />
+    <Property Name="CPU" Type="varchar" MaxLength="50" />
+    <Property Name="RAM" Type="varchar" MaxLength="50" />
+    <Property Name="HardDrive" Type="varchar" MaxLength="100" />
+    <Property Name="VGA" Type="nvarchar" MaxLength="100" />
+    <Property Name="Connection" Type="varchar" MaxLength="100" />
+    <Property Name="HDH" Type="varchar" MaxLength="50" />
+    <Property Name="Nang" Type="float" />
+  </EntityType>
+  <EntityType Name="LoaiSanPham">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLoaiSanPham" Type="nvarchar" MaxLength="50" />
+    <Property Name="SoLuong" Type="int" />
+  </EntityType>
+  <EntityType Name="Phone">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="50" />
+    <Property Name="GiaSanPham" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="HinhAnhSanPham" Type="varchar" MaxLength="1000" />
+    <Property Name="MoTaSanPham" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IDLoaiSanPham" Type="varchar" MaxLength="50" StoreGeneratedPattern="Computed" />
+    <Property Name="ManHinh" Type="varchar" MaxLength="100" />
+    <Property Name="CameraTruoc" Type="varchar" MaxLength="50" />
+    <Property Name="CameraSau" Type="varchar" MaxLength="50" />
+    <Property Name="RAM" Type="varchar" MaxLength="50" />
+    <Property Name="BoNhoTrong" Type="varchar" MaxLength="50" />
+    <Property Name="CPU" Type="nvarchar" MaxLength="150" />
+    <Property Name="GPU" Type="varchar" MaxLength="100" />
+    <Property Name="Pin" Type="varchar" MaxLength="50" />
+    <Property Name="HDH" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tablet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenSanPham" Type="varchar" MaxLength="50" />
+    <Property Name="GiaSanPham" Type="int" />
+    <Property Name="SoLuong" Type="int" />
+    <Property Name="HinhAnhSanPham" Type="varchar" MaxLength="1000" />
+    <Property Name="MoTaSanPham" Type="nvarchar" MaxLength="2000" />
+    <Property Name="IDLoaiSanPham" Type="varchar" MaxLength="50" StoreGeneratedPattern="Computed" />
+    <Property Name="ManHinh" Type="varchar" MaxLength="100" />
+    <Property Name="CameraTruoc" Type="varchar" MaxLength="50" />
+    <Property Name="CameraSau" Type="varchar" MaxLength="50" />
+    <Property Name="CPU" Type="nvarchar" MaxLength="100" />
+    <Property Name="GPU" Type="varchar" MaxLength="100" />
+    <Property Name="RAM" Type="varchar" MaxLength="50" />
+    <Property Name="BoNhoTrong" Type="varchar" MaxLength="50" />
+    <Property Name="Connection" Type="nvarchar" MaxLength="150" />
+    <Property Name="Pin" Type="varchar" MaxLength="50" />
+    <Property Name="HDH" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="char" MaxLength="11" />
+  </EntityType>
+  <Association Name="FK_ChiTietDonHang_DonHang">
+    <End Role="DonHang" Type="Self.DonHang" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangLaptop" Type="Self.ChiTietDonHangLaptop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangLaptop">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonHangLaptop_Laptop">
+    <End Role="Laptop" Type="Self.Laptop" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangLaptop" Type="Self.ChiTietDonHangLaptop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Laptop">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangLaptop">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonHangPhone_DonHang">
+    <End Role="DonHang" Type="Self.DonHang" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangPhone" Type="Self.ChiTietDonHangPhone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangPhone">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonHangPhone_Phone">
+    <End Role="Phone" Type="Self.Phone" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangPhone" Type="Self.ChiTietDonHangPhone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phone">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangPhone">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonHangTablet_DonHang">
+    <End Role="DonHang" Type="Self.DonHang" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangTablet" Type="Self.ChiTietDonHangTablet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHang">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangTablet">
+        <PropertyRef Name="MaDonHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonHangTablet_Tablet">
+    <End Role="Tablet" Type="Self.Tablet" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangTablet" Type="Self.ChiTietDonHangTablet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablet">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangTablet">
+        <PropertyRef Name="MaSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Laptop_LoaiSanPham">
+    <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="0..1" />
+    <End Role="Laptop" Type="Self.Laptop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Laptop">
+        <PropertyRef Name="IDLoaiSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Phone_LoaiSanPham">
+    <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="0..1" />
+    <End Role="Phone" Type="Self.Phone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Phone">
+        <PropertyRef Name="IDLoaiSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tablet_LoaiSanPham">
+    <End Role="LoaiSanPham" Type="Self.LoaiSanPham" Multiplicity="0..1" />
+    <End Role="Tablet" Type="Self.Tablet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiSanPham">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tablet">
+        <PropertyRef Name="IDLoaiSanPham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ThietBiOnlineModelStoreContainer">
+    <EntitySet Name="ChiTietDonHangLaptop" EntityType="Self.ChiTietDonHangLaptop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietDonHangPhone" EntityType="Self.ChiTietDonHangPhone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietDonHangTablet" EntityType="Self.ChiTietDonHangTablet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonHang" EntityType="Self.DonHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Laptop" EntityType="Self.Laptop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiSanPham" EntityType="Self.LoaiSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phone" EntityType="Self.Phone" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tablet" EntityType="Self.Tablet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ChiTietDonHang_DonHang" Association="Self.FK_ChiTietDonHang_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="ChiTietDonHangLaptop" EntitySet="ChiTietDonHangLaptop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonHangLaptop_Laptop" Association="Self.FK_ChiTietDonHangLaptop_Laptop">
+      <End Role="Laptop" EntitySet="Laptop" />
+      <End Role="ChiTietDonHangLaptop" EntitySet="ChiTietDonHangLaptop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonHangPhone_DonHang" Association="Self.FK_ChiTietDonHangPhone_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="ChiTietDonHangPhone" EntitySet="ChiTietDonHangPhone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonHangPhone_Phone" Association="Self.FK_ChiTietDonHangPhone_Phone">
+      <End Role="Phone" EntitySet="Phone" />
+      <End Role="ChiTietDonHangPhone" EntitySet="ChiTietDonHangPhone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonHangTablet_DonHang" Association="Self.FK_ChiTietDonHangTablet_DonHang">
+      <End Role="DonHang" EntitySet="DonHang" />
+      <End Role="ChiTietDonHangTablet" EntitySet="ChiTietDonHangTablet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonHangTablet_Tablet" Association="Self.FK_ChiTietDonHangTablet_Tablet">
+      <End Role="Tablet" EntitySet="Tablet" />
+      <End Role="ChiTietDonHangTablet" EntitySet="ChiTietDonHangTablet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Laptop_LoaiSanPham" Association="Self.FK_Laptop_LoaiSanPham">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="Laptop" EntitySet="Laptop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Phone_LoaiSanPham" Association="Self.FK_Phone_LoaiSanPham">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="Phone" EntitySet="Phone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tablet_LoaiSanPham" Association="Self.FK_Tablet_LoaiSanPham">
+      <End Role="LoaiSanPham" EntitySet="LoaiSanPham" />
+      <End Role="Tablet" EntitySet="Tablet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

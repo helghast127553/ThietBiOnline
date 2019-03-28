@@ -1,0 +1,69 @@
+﻿@model ThietBiOnline.Models.EF.Phone
+@{
+    ViewBag.Title = "ChiTietPhone";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@if (Model != null)
+{
+    <div id="divChiTietSanPham">
+        <img src="@Url.Content("~/Images/"+ Model.HinhAnhSanPham)" alt="@Model.TenSanPham" />
+        <h1>@Model.TenSanPham</h1>
+        <p>
+            <button type="submit" style="cursor: pointer;">
+                <strong>
+                    MUA NGAY GIÁ @String.Format("{0:0,0}", Model.GiaSanPham)
+                </strong>
+                <i class="fa fa-shopping-cart" style="font-size:24px"></i>
+            </button>
+        </p>
+
+        <aside class="right-content">
+            <div class="tableparameter">
+                <h2>Thông số kỹ thuật</h2>
+                <ul class="parameter">
+                    <li>
+                        <strong>Màn hình:</strong>
+                        &nbsp; @Model.ManHinh
+                    </li>
+                    <li>
+                        <strong>Camera trước:</strong>
+                        &nbsp; @Model.CameraTruoc
+                    </li>
+                    <li>
+                        <strong>Camera sau:</strong>
+                        &nbsp; @Model.CameraSau
+                    </li>
+                    <li>
+                        <strong>RAM:</strong>
+                        &nbsp; @Model.RAM GB
+                    </li>
+                    <li>
+                        <strong>Bộ nhớ trong:</strong>
+                        &nbsp; @Model.BoNhoTrong GB
+                    </li>
+                    <li>
+                        <strong>CPU:</strong>
+                        &nbsp; @Model.CPU
+                    </li>
+                    <li>
+                        <strong>GPU:</strong>
+                        &nbsp; @Model.GPU
+                    </li>
+                    <li>
+                        <strong>Dung lượng pin:</strong>
+                        &nbsp; @Model.Pin mAh
+                    </li>
+                    <li>
+                        <strong>Hệ điều hành:</strong>
+                        &nbsp; @Model.HDH
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+}
+
+
+
+

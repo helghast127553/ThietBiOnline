@@ -1,0 +1,273 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<h1>Laptop mới nổi bật</h1>
+<div id="divBody" style="background:White;">
+    @{ int i = 0; }
+    @foreach (var item in ViewBag.Laptops)
+    {
+        i++;
+        <div id="SanPham">
+            <a href="@Url.Action("ChiTietLaptop", "ChiTietSanPham", new { @ID = item.ID })">
+                <div id="AnhBia">
+                    <p>
+                        <img src="@Url.Content("~/Images/"+item.HinhAnhSanPham)" alt="@item.TenSanPham" width="100" height="150" />
+                    </p>
+                </div>
+            </a>
+            <div id="ThongTin">
+                @*Nếu tên sách dài hơn 30 ký tự thì chúng ta sẽ cắt tên sách ra lấy từ ký tự 0 đến ký tự 35*@
+                @if (item.TenSanPham.Length < 35)
+                {
+                    <div id="TenSach" title="@item.TenSanPham">@item.TenSanPham</div>
+                }
+                else
+                {
+                    <div id="TenSach" title="@item.TenSanPham"> @item.TenSanPham.Substring(0, 35) ...</div>
+                }
+
+                <div id="divInfo">
+                    <ul>
+                        <li>
+                            <strong>Màn Hình :</strong>
+                            &nbsp; @item.ManHinh
+                        </li>
+                        <li>
+                            <strong>CPU :</strong>
+                            &nbsp; @item.CPU
+                        </li>
+                        <li>
+                            <strong>Ram :</strong>
+                            &nbsp; @item.RAM
+                        </li>
+                        <li>
+                            <strong>VGA :</strong>
+                            &nbsp;@item.VGA
+                        </li>
+                        <li>
+                            <strong>HĐH :</strong>&nbsp;
+                            &nbsp;@item.HDH
+                        </li>
+                        <li>
+                            <strong>Nặng :</strong>
+                            &nbsp;@item.Nang Kg
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                @*Dịch dấu chấm động đơn giá sử dụng string.Format("{0:0,0}", tham số)*@
+                <div id="DonGia" style="color:orange">
+                    <font color="Green">Giá:</font>
+                    @String.Format("{0:0,0}", item.GiaSanPham) VNĐ
+                </div>
+                <div></div>
+            </div>
+            <div id="GioHang">
+                @using (Html.BeginForm("AddGioHang", "GioHang", new { @id = item.ID, @IDLoaiSanPham = item.IDLoaiSanPham, @strURL = Request.Url.ToString() }))
+                {
+                    <button type="submit" style="cursor:pointer" id="btnGioHang" class="btn btn-primary">
+                        <strong> Mua hàng </strong>
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                }
+            </div>
+        </div>
+        if (i % 3 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+</div>
+
+<br />
+
+<h1>Điện thoại mới nổi bật</h1>
+<div id="divBody" style="background:White;">
+    @{ int j = 0; }
+    @foreach (var item in ViewBag.Phones)
+    {
+        j++;
+        <div id="SanPham">
+            <a href="@Url.Action("ChiTietPhone", "ChiTietSanPham", new { @ID = item.ID })">
+                <div id="AnhBia">
+                    <img src="@Url.Content("~/Images/"+item.HinhAnhSanPham)" alt="@item.TenSanPham" width="100" height="150" />
+                </div>
+            </a>
+            <div id="ThongTin">
+                @*Nếu tên sách dài hơn 30 ký tự thì chúng ta sẽ cắt tên sách ra lấy từ ký tự 0 đến ký tự 35*@
+                @if (item.TenSanPham.Length < 35)
+                {
+                    <div id="TenSach" title="@item.TenSanPham">@item.TenSanPham</div>
+                }
+                else
+                {
+                    <div id="TenSach" title="@item.TenSanPham"> @item.TenSanPham.Substring(0, 35) ...</div>
+                }
+
+                <div id="divInfo">
+                    <ul>
+                        <li>
+                            <strong>Màn Hình :</strong>
+                            &nbsp; @item.ManHinh
+                        </li>
+                        <li>
+                            <strong>Camera trước :</strong>
+                            &nbsp;@item.CameraTruoc
+                        </li>
+                        <li>
+                            <strong>Camera sau :</strong>
+                            &nbsp;@item.CameraSau
+                        </li>
+                        <li>
+                            <strong>RAM :</strong>
+                            &nbsp;@item.RAM 
+                        </li>
+                        <li>
+                            <strong>Bộ nhớ trong :</strong>&nbsp;
+                            &nbsp;@item.BoNhoTrong
+                        </li>
+                        <li>
+                            <strong>CPU :</strong>
+                            &nbsp;@item.CPU
+                        </li>
+                        <li>
+                            <strong>GPU :</strong>
+                            &nbsp;@item.GPU
+                        </li>
+                        <li>
+                            <strong>Pin :</strong>
+                            &nbsp;@item.Pin
+                        </li>
+                        <li>
+                            <strong>HĐH :</strong>
+                            &nbsp;@item.HDH
+                        </li>
+                    </ul>
+
+                </div>
+
+                @*Dịch dấu chấm động đơn giá sử dụng string.Format("{0:0,0}", tham số)*@
+                <div id="DonGia" style="color:orange">
+                    <font color="Green">Giá:</font>
+                    @String.Format("{0:0,0}", item.GiaSanPham) VNĐ
+                </div>
+                <div></div>
+            </div>
+            <div id="GioHang">
+                @using (Html.BeginForm("AddGioHang", "GioHang", new { @id = item.ID, @IDLoaiSanPham = item.IDLoaiSanPham, @strURL = Request.Url.ToString() }))
+                {
+                    <button type="submit" style="cursor:pointer" id="btnGioHang" class="btn btn-primary">
+                        <strong> Mua hàng </strong>
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                }
+            </div>
+        </div>
+        if (j % 3 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+</div>
+
+<hr />
+
+<h1>Tablet mới nổi bật</h1>
+<div id="divBody" style="background:White;">
+    @{ int k = 0; }
+    @foreach (var item in ViewBag.Tablets)
+    {
+        k++;
+        <div id="SanPham">
+            <a href="@Url.Action("ChiTietTablet", "ChiTietSanPham", new { @ID = item.ID })">
+                <div id="AnhBia">
+                    <img src="@Url.Content("~/Images/"+item.HinhAnhSanPham)" alt="@item.TenSanPham" width="100" height="150" />
+                </div>
+            </a>
+            <div id="ThongTin">
+                @*Nếu tên sách dài hơn 30 ký tự thì chúng ta sẽ cắt tên sách ra lấy từ ký tự 0 đến ký tự 35*@
+                @if (item.TenSanPham.Length < 35)
+                {
+                    <div id="TenSach" title="@item.TenSanPham">@item.TenSanPham</div>
+                }
+                else
+                {
+                    <div id="TenSach" title="@item.TenSanPham"> @item.TenSanPham.Substring(0, 35) ...</div>
+                }
+
+                <div id="divInfo">
+                    <ul>
+                        <li>
+                            <strong>Màn Hình :</strong>
+                            &nbsp; @item.ManHinh
+                        </li>
+                        <li>
+                            <strong>Camera trước :</strong>
+                            &nbsp;@item.CameraTruoc
+                        </li>
+                        <li>
+                            <strong>Camera sau :</strong>
+                            &nbsp;@item.CameraSau
+                        </li>
+                        <li>
+                            <strong>CPU :</strong>
+                            &nbsp;@item.CPU
+                        </li>
+                        <li>
+                            <strong>GPU :</strong>
+                            &nbsp;@item.GPU
+                        </li>
+                        <li>
+                            <strong>RAM :</strong>
+                            &nbsp;@item.RAM
+                        </li>
+                        <li>
+                            <strong>Bộ nhớ trong :</strong>&nbsp;
+                            &nbsp;@item.BoNhoTrong
+                        </li>
+                        <li>
+                            <strong>Connection :</strong>&nbsp;
+                            &nbsp;@item.Connection
+                        </li>
+                        <li>
+                            <strong>Pin :</strong>
+                            &nbsp;@item.Pin
+                        </li>
+                        <li>
+                            <strong>HĐH :</strong>
+                            &nbsp;@item.HDH
+                        </li>
+                    </ul>
+
+                </div>
+
+                @*Dịch dấu chấm động đơn giá sử dụng string.Format("{0:0,0}", tham số)*@
+                <div id="DonGia" style="color:orange">
+                    <font color="Green">Giá:</font>
+                    @String.Format("{0:0,0}", item.GiaSanPham) VNĐ
+                </div>
+                <div></div>
+            </div>
+            <div id="GioHang">
+                @using (Html.BeginForm("AddGioHang", "GioHang", new { @id = item.ID, @IDLoaiSanPham = item.IDLoaiSanPham, @strURL = Request.Url.ToString() }))
+                {
+                    <button type="submit" style="cursor:pointer" id="btnGioHang" class="btn btn-primary">
+                        <strong> Mua hàng </strong>
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                }
+            </div>
+        </div>
+        if (k % 3 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+</div>
+<div style="clear:both"></div>
+
+
+

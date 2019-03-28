@@ -1,0 +1,131 @@
+﻿@model ThietBiOnline.Models.EF.Laptop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Laptop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GiaSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiaSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhAnhSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhAnhSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTaSanPham)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.MoTaSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDLoaiSanPham)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDLoaiSanPham)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManHinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManHinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CPU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CPU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HardDrive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HardDrive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VGA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VGA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Connection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Connection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HDH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HDH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nang)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Laptop")
+</p>

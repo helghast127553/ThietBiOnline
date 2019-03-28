@@ -1,0 +1,142 @@
+﻿@model ThietBiOnline.Models.DTO.DonHangViewModels
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<link href="~/Content/GioHang.css" rel="stylesheet" />
+<table>
+    <tr>
+        <th> Tên sản phẩm </th>
+        <th> Ảnh bìa </th>
+        <th> Số lượng </th>
+        <th> Đơn giá </th>
+        <th> Thành tiền </th>
+    </tr>
+    @if (ViewBag.gioHangs != null)
+    {
+        foreach (var item in ViewBag.gioHangs)
+        {
+            <tr>
+                <td> @item.TenSanPham </td>
+                <td>
+                    <img src="@Url.Content("~/Images/" + item.HinhAnh)" width="50" height="50" />
+                </td>
+                <td>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue('@item.ID', '@item.IDLoaiSanPham')" value="Decrease Value">-</div>
+                        <input type="number" class="number" id="@item.Cocatenate" value="@item.SoLuong" />
+                        <div class="value-button" id="increase" onclick="increaseValue('@item.ID', '@item.IDLoaiSanPham')" value="Increase Value">+</div>
+                    </form>
+                </td>
+                <td> @String.Format("{0:0,0}", item.DonGia) VND </td>
+                <td class="@item.Cocatenate"> @String.Format("{0:0,0}", item.ThanhTien) VND </td>
+                <td>
+                    @using (Html.BeginForm("DeleteGioHang", "GioHang", new { @ID = item.ID, @IDLoaiSanPham = item.IDLoaiSanPham }, FormMethod.Post, new { @name = @item.Cocatenate }))
+                    {
+                        <i class="fa fa-remove fa-2x" style="cursor: pointer" onclick="formSubmit('@item.Cocatenate')"></i>
+                    }
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+<div id="tongTien">
+    Tổng Tiền: <span id="TongTien">@String.Format("{0:0,0}", ViewBag.sumTotalAmount) VND</span>
+</div>
+
+<br />
+
+@using (Html.BeginForm("OrderProduct", "GioHang", FormMethod.Post, new { @id = "formOrder", @class = "form-horizontal", @autocomplete = "on" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenKhachHang, new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.TenKhachHang, new { @type = "text", @class = "form-control", @placeHolder = "Nhập họ và tên khách hàng" })
+            @Html.ValidationMessageFor(model => model.TenKhachHang, "", new { @class = "error" })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.TenNhanVien, new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.TenNhanVien, new { @type = "text", @class = "form-control", @placeHolder = "Nhập họ và tên nhân viên" })
+            @Html.ValidationMessageFor(model => model.TenNhanVien, "", new { @class = "error" })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SDT, new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.SDT, new { @type = "text", @class = "form-control", @placeHolder = "Nhập số điện thoại" })
+            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "error" })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })
+        <div class="col-md-5">
+            @Html.TextBoxFor(model => model.Email, new { @type = "text", @class = "form-control", @placeHolder = "Nhập địa chỉ email" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "error" })
+        </div>
+    </div>
+
+    <br />
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" style="cursor:pointer" id="btnGioHang" class="btn btn-primary">
+                <strong> Tiến hành mua ngay </strong>
+                <i class="fa fa-shopping-cart"></i>
+            </button>
+        </div>
+    </div>
+}
+
+<script>
+    let increaseValue = (ID, IDLoaiSanPham) => {
+        debugger;
+        let maSanPham = ID + IDLoaiSanPham;
+        let value = parseInt(document.getElementById(maSanPham).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value++;   
+        document.getElementById(maSanPham).value = value;
+        updateProductPrice(ID, IDLoaiSanPham, value);
+    };
+
+    let decreaseValue = (ID, IDLoaiSanPham) => {
+        debugger;
+        let maSanPham = ID + IDLoaiSanPham;
+        let value = parseInt(document.getElementById(maSanPham).value, 10);
+        value = isNaN(value) ? 0 : value;
+        value == 1 ? value = 1 : value--;
+        document.getElementById(maSanPham).value = value;
+        updateProductPrice(ID, IDLoaiSanPham, value);
+    };
+
+    let updateProductPrice = (ID, IDLoaiSanPham, soLuong) => {
+        $.ajax({
+            type: 'POST',
+            url: '/GioHang/UpdateGioHang',
+            dataType: 'json',
+            data: { "ID": ID, "IDLoaiSanPham": IDLoaiSanPham, "soLuong": soLuong },
+            success: function (response) {
+                let maSanPham = ID + IDLoaiSanPham;
+                document.getElementsByClassName(maSanPham)[0].innerHTML = response['ThanhTien'];
+                document.getElementById('TongTien').innerHTML = response['TongTien'];
+            }
+        })
+    };
+
+    let formSubmit = maSanPham => {
+        debugger;
+        var MaSanPham = maSanPham.toString();
+        document.forms[MaSanPham].submit();
+    };
+</script>
